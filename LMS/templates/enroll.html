@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrollment</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .navbar {
+            background-color: #3498db;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: #2980b9;
+        }
+
+        .navbar input[type="text"] {
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .course-card {
+            margin: 20px;
+        }
+
+        .course-card img {
+            width: 90%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .course-card h3 {
+            margin: 20px 0;
+        }
+
+        .course-card button {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'course' %}">Courses</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+
+            <!-- Add search box to navbar -->
+            <input type="text" placeholder="Search" style="margin-right: 10px;">
+
+            <a href="#" style="float: right;"></a>
+        </div>
+    </header>
+    <main>
+        <section class="courses">
+            <h2>Featured Courses</h2>
+            <div class="course-card">
+                <img src="{% static 'DataStructures.jpg' %}" alt="Data structures"height="500" width="1300">
+                <h3>Data Structures</h3>
+                <p>A fundamental subject for CSE students, data structures include arrays, linked-lists, trees, stacks, and queues.</p>
+
+                <!-- Add Django syntax for video -->
+                <video width="1300" height="500" controls>
+                    <source src="{% static 'y2mate.com - Types of Data Structures_1080p.mp4' %}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Add Django syntax for topic names -->
+                <ul>
+                    <li>Arrays</li>
+                    <li>Linked-lists</li>
+                    <li>Trees</li>
+                    <li>Stacks</li>
+                    <li>Queues</li>
+                </ul>
+
+                <!-- Add alerts to the enrollment button -->
+                <button onclick="showAlerts()">Enroll</button>
+
+                <script>
+                    function showAlerts() {
+                        // Use window.confirm() for a confirmation dialog
+                        var confirmation = window.confirm("Are you sure to submit?");
+                        if (confirmation) {
+                            // User clicked 'OK', perform enrollment action here
+                            console.log("Enrollment confirmed!");
+
+                            // Show successful enrollment alert
+                            window.alert("Enrollment successful!");
+                        } else {
+                            // User clicked 'Cancel', handle accordingly
+                            console.log("Enrollment canceled!");
+                        }
+                    }
+                </script>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2022 Learning Management System. All rights reserved.</p>
+    </footer>
+    <!-- Add Bootstrap and jQuery JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

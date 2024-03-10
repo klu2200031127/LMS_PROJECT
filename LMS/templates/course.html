@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <!-- Add Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Add custom CSS -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .navbar {
+            background-color: #3498db;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .navbar a:hover {
+            background-color: #2980b9;
+        }
+
+        .search-box {
+            margin-right: 10px;
+        }
+
+        .search-box input {
+            padding: 5px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        .course-card {
+            margin: 20px;
+        }
+
+        .course-card img {
+            width: 70%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .course-card h3 {
+            margin: 20px 0;
+        }
+
+        .course-card button {
+            background-color: #2ecc71;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'course' %}">Courses</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'contact' %}">Contact</a>
+            <a href="#" style="float: right;"></a>
+        </div>
+    </header>
+    <main>
+        <section class="courses">
+            <h2>Featured Courses</h2>
+            <div class="course-card">
+                <img src="{% static 'DataStructures.jpg' %}" alt="Data structures">
+                <h3>DataStructures</h3>
+                <p>A fundamental subject for CSE students, data structures include arrays, linked-lists, trees, stacks, and queues.</p>
+                <button onclick="location.href='{% url 'enroll' %}'">Enroll</button>
+            </div>
+            <div class="course-card">
+              <img src="{% static 'OperatingSystems.jpg' %}" alt="OperatingSystems">
+                <h3>OperatingSystems</h3>
+                <p>This subject includes operating system abstractions, mechanisms, and their implementations. It also includes subjects like hardware, memory, system, and application programs..</p>
+                <button>Enroll</button>
+            </div>
+            <div class="course-card">
+              <img src="{% static 'SoftwareEngineering.jpg' %}" alt="SoftwareEngineering">
+                <h3>SoftwareEngineering</h3>
+                <p>A scholarly program that incorporates the field of computer engineering and computer science. It focuses on the essentials of PC programming and systems administration.</p>
+                <button>Enroll</button>
+            </div>
+            <div class="course-card">
+              <img src="{% static 'DatabaseManagementSystems.jpg' %}" alt="Data Base Management ">
+                <h3>Data Base Management</h3>
+                <p>This course covers the design and implementation of database systems, including data modeling, query languages, transaction management, and security.</p>
+                <button>Enroll</button>
+            </div>
+            <div class="course-card">
+              <img src="{% static 'IOT.jpg' %}" alt="IOT">
+                <h3>IOT</h3>
+                <p>IoT stands for Internet of Things. It's a network of physical devices that are embedded with sensors, software, and network connectivity. These devices can collect and share data, allowing businesses to monitor, manage, and automate their operations more efficiently.</p>
+                <button>Enroll</button>
+            </div>
+            <div class="course-card">
+              <img src="{% static 'digitalsignal.jpg' %}" alt="digitalsignal">
+                <h3>Digital signal processing</h3>
+                <p>An important and growing subject area in electrical/computer engineering, computer science, and other engineering/science disciplines.</p>
+                <button>Enroll</button>
+            </div>
+            <div class="course-card">
+              <img src="{% static 'UX-Design.jpg' %}" alt="UX-Design">
+                <h3>Learn Figma: User Interface Design Essentials - UI/UX Design</h3>
+                <p>Learn Figma: User Interface Design Essentials - UI/UX Design is a course on Udemy that teaches users how to create user interface (UI) and user experience (UX) designs.</p>
+                <button>Enroll</button>
+            </div>
+            <div class="course-card">
+              <img src="{% static 'cy1.jpg' %}" alt="Cyber Security">
+                <h3>CyberSecurity</h3>
+                <p>Cybersecurity is the use of technologies, processes, and controls to protect systems, networks, programs, devices, and data from cyberAttacks.</p>
+                <button>Enroll</button>
+            </div>
+
+           <div class="course-card">
+               <img src="{% static 'data-science.jpg' %}" alt="Data Science" >
+
+                <h3>Data Science</h3>
+                <p>Data science is a field that uses algorithms, procedures, and processes to analyze large amounts of data.</p>
+                <button>Enroll</button>
+            </div>
+
+            <div class="course-card">
+                <img src="{% static 'grafix.jpg' %}" alt="Graphics and Gaming">
+
+                <h3>Graphics and Gaming</h3>
+                <p>Computer graphics refers to a technology that generates images on a computer screen.</p>
+                <button>Enroll</button>
+            </div>
+            </div>
+            <!-- Repeat the pattern for other course cards -->
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2022 Learning Management System. All rights reserved.</p>
+    </footer>
+    <!-- Add Bootstrap and jQuery JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
